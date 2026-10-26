@@ -1,0 +1,71 @@
+.piano {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: var(--piano-height, 11rem);
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.piano__key {
+  position: relative;
+  padding: 0;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.piano__key--white {
+  flex: 1 1 0;
+  min-width: 0;
+  background-color: #fff;
+  border: 1px solid #b8bcc6;
+}
+
+.piano__key--black {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 62%;
+  /* `left` marks the boundary between the two white keys this black key
+     straddles, so pull it back by half its width to sit centred on it. */
+  transform: translateX(-50%);
+  background-color: #16181d;
+  border: 1px solid #000;
+}
+
+.piano__key--white:hover:not(:disabled),
+.piano__key--white[data-active] {
+  background-color: color-mix(in srgb, var(--accent) 18%, #fff);
+}
+
+.piano__key--black:hover:not(:disabled),
+.piano__key--black[data-active] {
+  background-color: color-mix(in srgb, var(--accent) 70%, #16181d);
+}
+
+.piano__key:focus-visible {
+  z-index: 2;
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.piano__key:disabled {
+  cursor: default;
+}
+
+.piano__label {
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0;
+  width: 100%;
+  font-size: 0.625rem;
+  color: #6b7280;
+  text-align: center;
+  pointer-events: none;
+}
+
+.piano__key--black .piano__label {
+  color: #c3c7d1;
+}

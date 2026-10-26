@@ -1,0 +1,60 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.settings__empty {
+  font-size: 0.85rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.field--toggle {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.field__value {
+  font-weight: 400;
+  color: color-mix(in srgb, var(--fg) 65%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.field select {
+  padding: 0.35rem 0.5rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: inherit;
+  background-color: color-mix(in srgb, var(--fg) 6%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--fg) 22%, transparent);
+  border-radius: 0.35rem;
+}
+
+.field input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.field input[type='checkbox'] {
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.field--toggle label {
+  font-size: 0.85rem;
+  cursor: pointer;
+}

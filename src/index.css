@@ -1,0 +1,183 @@
+:root {
+  color-scheme: light dark;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --fg: #1a1a1a;
+  --bg: #fdfdfd;
+  --panel-bg: #ffffff;
+  --border: #e3e5ea;
+  --accent: #4a5cf0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e8e8;
+    --bg: #14161a;
+    --panel-bg: #1b1e24;
+    --border: #2b2f37;
+    --accent: #8b95ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+p {
+  margin: 0;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+/* ---------- App shell ---------- */
+
+.app {
+  display: grid;
+  grid-template-areas:
+    'modes main settings'
+    'piano piano piano';
+  grid-template-columns: 15rem minmax(0, 1fr) 15rem;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.app__modes {
+  grid-area: modes;
+}
+
+.app__main {
+  grid-area: main;
+}
+
+.app__settings {
+  grid-area: settings;
+}
+
+.app__piano {
+  grid-area: piano;
+  padding: 0 1.25rem 1.25rem;
+}
+
+/* ---------- Panels ---------- */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1rem;
+  overflow-y: auto;
+  background-color: var(--panel-bg);
+}
+
+.app__modes {
+  border-right: 1px solid var(--border);
+}
+
+.app__settings {
+  border-left: 1px solid var(--border);
+}
+
+.panel__title {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: color-mix(in srgb, var(--fg) 55%, transparent);
+  text-transform: uppercase;
+}
+
+/* ---------- Main screen ---------- */
+
+.app__main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.app__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+.app__mode {
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-radius: 999px;
+}
+
+.app__description {
+  max-width: 32rem;
+  color: color-mix(in srgb, var(--fg) 65%, transparent);
+}
+
+.app__status {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--fg) 75%, transparent);
+}
+
+/* ---------- Narrow layout ---------- */
+
+@media (max-width: 64rem) {
+  .app {
+    grid-template-areas:
+      'modes'
+      'main'
+      'settings'
+      'piano';
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .panel {
+    overflow: visible;
+  }
+
+  .app__modes,
+  .app__settings {
+    border: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mode-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .mode-list__item {
+    width: auto;
+  }
+
+  .app__main {
+    padding-block: 1.75rem;
+  }
+}

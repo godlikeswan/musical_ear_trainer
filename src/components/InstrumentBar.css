@@ -1,0 +1,80 @@
+.instrument-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.4rem 0.15rem 0.6rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.instrument-bar__field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.instrument-bar__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: color-mix(in srgb, var(--fg) 55%, transparent);
+  text-transform: uppercase;
+}
+
+.instrument-bar select {
+  padding: 0.2rem 0.4rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: inherit;
+  background-color: var(--panel-bg);
+  border: 1px solid color-mix(in srgb, var(--fg) 22%, transparent);
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.instrument-bar input[type='range'] {
+  width: 7rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.instrument-bar__value {
+  min-width: 2.4rem;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in srgb, var(--fg) 65%, transparent);
+}
+
+.instrument-bar__spacer {
+  flex: 1 1 auto;
+}
+
+.instrument-bar__slot {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--fg) 45%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--fg) 20%, transparent);
+  border-radius: 0.35rem;
+}
+
+.instrument-bar__slot em {
+  font-size: 0.65rem;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+@media (max-width: 64rem) {
+  .instrument-bar {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .instrument-bar__spacer {
+    display: none;
+  }
+}

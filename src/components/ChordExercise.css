@@ -1,0 +1,120 @@
+.chord-exercise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 26rem;
+  margin-top: 1.5rem;
+}
+
+.chord-exercise__play {
+  padding: 0.5rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 0.45rem;
+  cursor: pointer;
+}
+
+.chord-exercise__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.chord-exercise__label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.chord-exercise__label em {
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--fg) 60%, transparent);
+}
+
+.chord-exercise__input {
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+  font-size: 1.1rem;
+  text-align: center;
+  color: inherit;
+  background-color: var(--panel-bg);
+  border: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+  border-radius: 0.4rem;
+}
+
+.chord-exercise__input:focus-visible {
+  border-color: var(--accent);
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 1px;
+}
+
+.chord-exercise__submit,
+.chord-exercise__feedback button {
+  padding: 0.4rem 1rem;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid color-mix(in srgb, var(--fg) 25%, transparent);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.chord-exercise__submit:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.chord-exercise__submit:not(:disabled):hover,
+.chord-exercise__feedback button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.chord-exercise__feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: color-mix(in srgb, var(--fg) 5%, transparent);
+  border-radius: 0.45rem;
+}
+
+.chord-exercise__verdict {
+  margin: 0;
+  font-weight: 600;
+}
+
+.chord-exercise__verdict--correct {
+  color: #1f9d55;
+}
+
+.chord-exercise__verdict--wrong {
+  color: #d1442f;
+}
+
+.chord-exercise__detail {
+  margin: 0;
+  font-size: 0.76rem;
+  color: color-mix(in srgb, var(--fg) 62%, transparent);
+}
+
+.chord-exercise__detail + .chord-exercise__detail {
+  margin-bottom: 0.35rem;
+}
+
+.chord-exercise__hint {
+  margin: 0.2rem 0 0;
+  font-size: 0.7rem;
+  color: color-mix(in srgb, var(--fg) 45%, transparent);
+}
